@@ -49,6 +49,10 @@ class ChooseViewController: UIViewController {
         if segue.identifier == "showResult" {
             let resultViewController = segue.destination as! ResultViewController
             resultViewController.userChoice = userChoice
+        } else if segue.identifier == "showResultForScissors" {
+            userChoice = .scissors
+            let resultViewController = segue.destination as! ResultViewController
+            resultViewController.userChoice = userChoice
         }
     }
 
