@@ -15,15 +15,22 @@ class ChooseViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    func computerChoose() -> Choice {
-        let rawValue = Int(arc4random() % 3)
-        return Choice(rawValue: rawValue)!
-    }
-
     @IBAction func choose(_ sender: UIButton) {
         let choice = Choice(rawValue: sender.tag)!
-        let computerChoice = computerChoose();
-        print("user choose \(choice), computer choose \(computerChoice)")
+
+        switch choice {
+            case .rock:
+                showResultByCode(.rock)
+            default:
+                break;
+        }
+    }
+
+    func showResultByCode(_ userChoice: Choice) {
+        let resultViewController: ResultViewController
+        resultViewController = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
+        resultViewController.userChoice = userChoice
+        present(resultViewController, animated: true, completion: nil)
     }
 
 }

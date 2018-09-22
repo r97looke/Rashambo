@@ -62,8 +62,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Result View Controller-->
+        <scene sceneID="P0R-a4-xxo">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" id="pJU-Hi-AGr" customClass="ResultViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XqT-G1-OnF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itsATie" translatesAutoresizingMaskIntoConstraints="NO" id="jCW-5g-ECl" userLabel="Result ImageView">
+                                <rect key="frame" x="96" y="143.5" width="183" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's a tie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWI-sn-3BR" userLabel="Result Label">
+                                <rect key="frame" x="157.5" y="359.5" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgo-b7-eqX" userLabel="Play Again Button">
+                                <rect key="frame" x="152" y="396.5" width="71" height="30"/>
+                                <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="playAgain:" destination="pJU-Hi-AGr" eventType="touchUpInside" id="DmF-Ak-j27"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jCW-5g-ECl" firstAttribute="centerX" secondItem="XqT-G1-OnF" secondAttribute="centerX" id="5DJ-Zz-pME"/>
+                            <constraint firstItem="dgo-b7-eqX" firstAttribute="top" secondItem="mWI-sn-3BR" secondAttribute="bottom" constant="16" id="b6j-2O-Pwg"/>
+                            <constraint firstItem="dgo-b7-eqX" firstAttribute="centerX" secondItem="XqT-G1-OnF" secondAttribute="centerX" id="doi-bR-Yah"/>
+                            <constraint firstItem="mWI-sn-3BR" firstAttribute="top" secondItem="jCW-5g-ECl" secondAttribute="bottom" constant="16" id="qxQ-jj-JJF"/>
+                            <constraint firstItem="mWI-sn-3BR" firstAttribute="centerX" secondItem="XqT-G1-OnF" secondAttribute="centerX" id="rdi-M5-VnG"/>
+                            <constraint firstItem="jCW-5g-ECl" firstAttribute="centerY" secondItem="ffY-aX-CXL" secondAttribute="centerY" constant="-100" id="uwO-5U-AXz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ffY-aX-CXL"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultImageView" destination="jCW-5g-ECl" id="Ldy-Md-jMi"/>
+                        <outlet property="resultLabel" destination="mWI-sn-3BR" id="8fO-nM-lDw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJR-hg-eXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390" y="45"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="itsATie" width="183" height="200"/>
         <image name="paper" width="75" height="65"/>
         <image name="rock" width="75" height="65"/>
         <image name="scissors" width="75" height="65"/>
