@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ChooseViewController.swift
 //  Roshambo
 //
 //  Created by slchen on 2018/9/22.
@@ -8,13 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ChooseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func choose(_ sender: UIButton) {
+        let choice = Choice(rawValue: sender.tag)!
+        print("user choose \(choice)")
+    }
 
 }
 
